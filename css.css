@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+	font-family: monospace;
+	font-size: 36px;
+}
+
+#app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 600px;
+	margin: 0 auto;
+	min-height: 100vh;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	border: 3px solid #000;
+	background-color: #e0e0e0;
+}
+
+.display {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border: 1px solid #000;
+	border-radius: 10px;
+	background-color: #bab9b9;
+	height: 80px;
+	margin: 10px 10px 0 10px;
+
+	span {
+		padding: 0 20px;
+	}
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 450px;
+	padding: 10px;
+	gap: 2px;
+
+	button {
+		background-color: #b8b5b5;
+		flex: 1 24%;
+		padding: 20px;
+		font-size: 26px;
+		border: 1px solid #000000;
+		font-family: monospace;
+		transition: border-color 0.3s ease-in-out;
+
+		&:hover {
+			border-color: #fdfdfd;
+		}
+	}
+
+	& .operator,
+	.percent,
+	.sign,
+	.decimal {
+		background-color: orange;
+	}
+
+	& .equals {
+		background-color: green;
+		flex-basis: 20%;
+	}
+
+	& .decimal {
+		flex-basis: 20%;
+	}
+
+	& .clear {
+		background-color: crimson;
+	}
+
+	& #zero {
+		flex-basis: 45.2%;
+		background-color: #7c479b;
+	}
+}
