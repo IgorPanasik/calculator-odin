@@ -57,11 +57,7 @@ body {
 		font-size: 26px;
 		border: 1px solid #000000;
 		font-family: monospace;
-		transition: border-color 0.3s ease-in-out;
-
-		&:hover {
-			border-color: #fdfdfd;
-		}
+		transition: background-color 0.2s ease-in-out;
 	}
 
 	& .operator,
@@ -87,5 +83,13 @@ body {
 	& #zero {
 		flex-basis: 45.2%;
 		background-color: #7c479b;
+	}
+
+	& .active {
+		background: #f8ef8fea;
+	}
+
+	& .blink {
+		background-color: #cccccc;
 	}
 }
