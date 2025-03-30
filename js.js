@@ -6,7 +6,6 @@ let operandOne = '';
 let operator = null;
 let operandTwo = '';
 let result = null;
-let isPercentage = false;
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
@@ -76,7 +75,6 @@ const clickOperands = (e) => {
 
 const clickOperator = (e) => {
 	if (!e.target.classList.contains('operator')) return;
-	if (isPercentage) isPercentage = false;
 
 	if (operator && !operandTwo) {
 		operator = e.target.textContent;
@@ -141,24 +139,42 @@ const modifyNumber = (e) => {
 		!e.target.classList.contains('percent')
 	)
 		return;
+	addEffectBlink(e.target);
 	let modifier = e.target.classList.contains('sign') ? -1 : 0.01;
 
 	if (!operator) {
 		operandOne = (parseFloat(operandOne) * modifier).toString();
-		display.textContent = operandOne;
+		display.textContent = isNaN(operandOne) ? '0' : operandOne;
 	} else {
 		operandTwo = (parseFloat(operandTwo) * modifier).toString();
-		display.textContent = operandTwo;
+		display.textContent = isNaN(operandTwo) ? '0' : operandTwo;
 	}
 
-	if (e.target.classList.contains('percent')) isPercentage = true;
+	if (e.target.classList.contains('percent'));
 };
 
 const allClear = (e) => {
 	if (!e.target.classList.contains('clear')) return;
+	addEffectBlink(e.target);
 	operandOne = operandTwo = '';
 	operator = result = null;
 	display.textContent = '0';
+};
+
+const backspace = (e) => {
+	if (!e.target.classList.contains('backspace')) return;
+	addEffectBlink(e.target);
+
+	if (result !== null) return;
+
+	if (operator && operandTwo) {
+		operandTwo = operandTwo.slice(0, -1);
+		display.textContent = operandTwo || '0';
+	}
+	if (!operator && operandOne) {
+		operandOne = operandOne.slice(0, -1);
+		display.textContent = operandOne || '0';
+	}
 };
 
 // Function to refresh the display on click
@@ -169,6 +185,13 @@ const updateDisplay = (e) => {
 	addDecimal(e);
 	modifyNumber(e);
 	allClear(e);
+	backspace(e);
 };
 
 buttons.addEventListener('click', updateDisplay);
+document.addEventListener('keydown', (e) => {
+	const button = document.querySelector(`.buttons button[data-key="${e.key}"]`);
+	if (button) {
+		button.click();
+	}
+});

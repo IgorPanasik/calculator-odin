@@ -5,16 +5,17 @@
 }
 
 body {
-	text-align: center;
 	font-family: monospace;
 	font-size: 36px;
+	background-color: #7886d1;
 }
 
 #app {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 600px;
+	column-gap: 10px;
+	max-width: 900px;
 	margin: 0 auto;
 	min-height: 100vh;
 }
@@ -23,7 +24,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	border: 3px solid #000;
-	background-color: #e0e0e0;
+	background-color: #e2dfdf;
+	box-shadow: 0 0 10px 2px #2b2a2a;
 }
 
 .display {
@@ -37,7 +39,7 @@ body {
 	margin: 10px 10px 0 10px;
 
 	span {
-		padding: 0 20px;
+		padding: 0 18px;
 	}
 }
 
@@ -52,8 +54,8 @@ body {
 
 	button {
 		background-color: #b8b5b5;
-		flex: 1 24%;
-		padding: 20px;
+		flex: 1 22%;
+		padding: 15px;
 		font-size: 26px;
 		border: 1px solid #000000;
 		font-family: monospace;
@@ -66,13 +68,12 @@ body {
 		background-color: orange;
 	}
 
-	& .equals {
-		background-color: green;
-		flex-basis: 20%;
+	& .backspace {
+		background-color: #e94536;
 	}
 
-	& .decimal {
-		flex-basis: 20%;
+	& .equals {
+		background-color: green;
 	}
 
 	& .clear {
@@ -80,7 +81,6 @@ body {
 	}
 
 	& #zero {
-		flex-basis: 45.2%;
 		background-color: #7c479b;
 	}
 
@@ -90,5 +90,25 @@ body {
 
 	& .blink {
 		background-color: #cccccc !important;
+	}
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 400px;
+	padding: 12px;
+	row-gap: 10px;
+	font-size: 20px;
+	border: 2px solid #aca5b3;
+	line-height: 1;
+	background-color: #c2ccef;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px 2px #2b2a2a;
+
+	& p {
+		font-size: 16px;
+		line-height: 1.1;
 	}
 }

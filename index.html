@@ -16,25 +16,36 @@
 				<span>0</span>
 			</div>
 			<div class="buttons">
-				<button class="clear" type="button" aria-label="Clear">AC</button>
+				<button class="clear" type="button" aria-label="Clear" data-key="Escape">AC</button>
+				<button class="backspace" type="button" aria-label="Remove last number" data-key="Backspace">⌫</button>
 				<button class="sign" type="button" aria-label="Toggle Sign">+/-</button>
-				<button class="percent" type="button">%</button>
-				<button class="operator" type="button" aria-label="Divide">/</button>
-				<button class="operand" type="button">7</button>
-				<button class="operand" type="button">8</button>
-				<button class="operand" type="button">9</button>
-				<button class="operator" type="button" aria-label="Multiply">*</button>
-				<button class="operand" type="button">4</button>
-				<button class="operand" type="button">5</button>
-				<button class="operand" type="button">6</button>
-				<button class="operator" type="button">-</button><button class="operand" type="button">1</button>
-				<button class="operand" type="button">2</button>
-				<button class="operand" type="button">3</button>
-				<button class="operator" type="button">+</button>
-				<button class="operand" id="zero" type="button">0</button>
-				<button class="decimal" type="button">.</button>
-				<button class="equals" type="button">=</button>
+				<button class="percent" type="button" data-key="%">%</button>
+				<button class="operand" type="button" data-key="7">7</button>
+				<button class="operand" type="button" data-key="8">8</button>
+				<button class="operand" type="button" data-key="9">9</button>
+				<button class="operator" type="button" aria-label="Divide" data-key="/">/</button>
+				<button class="operand" type="button" data-key="4">4</button>
+				<button class="operand" type="button" data-key="5">5</button>
+				<button class="operand" type="button" data-key="6">6</button>
+				<button class="operator" type="button" aria-label="Multiply" data-key="*">*</button>
+				<button class="operand" type="button" data-key="1">1</button>
+				<button class="operand" type="button" data-key="2">2</button>
+				<button class="operand" type="button" data-key="3">3</button>
+				<button class="operator" type="button" data-key="-">-</button>
+				<button class="operand" id="zero" type="button" data-key="0">0</button>
+				<button class="decimal" type="button" data-key=".">.</button>
+				<button class="operator" type="button" data-key="+">+</button>
+				<button class="equals" type="button" data-key="=">=</button>
 			</div>
+		</div>
+		<div class="info">
+			<h2>Key control:</h2>
+			<p><strong>[0-9]</strong>-Select a number.</p>
+			<p><strong>[+,-,/,*,=]</strong>-Mathematical operators.</p>
+			<p><strong>[Backspace]</strong>-Remove the last entered number.</p>
+			<p><strong>[%]</strong>-Convert to a percentage.</p>
+			<p><strong>[.]</strong>-Add a decimal point (if pressed first, adds the template "0.").</p>
+			<p><strong>[Esc]</strong>-Clear All.</p>
 		</div>
 	</main>
 </body>
