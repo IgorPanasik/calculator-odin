@@ -57,7 +57,6 @@ body {
 		font-size: 26px;
 		border: 1px solid #000000;
 		font-family: monospace;
-		transition: background-color 0.2s ease-in-out;
 	}
 
 	& .operator,
@@ -90,6 +89,6 @@ body {
 	}
 
 	& .blink {
-		background-color: #cccccc;
+		background-color: #cccccc !important;
 	}
 }
