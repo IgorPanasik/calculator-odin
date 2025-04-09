@@ -70,6 +70,14 @@ body {
 
 	& .backspace {
 		background-color: #e94536;
+		font-size: 26px;
+		line-height: 1;
+	}
+
+	@-moz-document url-prefix() {
+		.backspace {
+			height: 67px;
+		}
 	}
 
 	& .equals {
